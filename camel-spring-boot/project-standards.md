@@ -9,7 +9,8 @@ This rule file contains build tools, commands, and code style constraints for th
 - **Module-specific build:** yes (always run `mvn` in the module directory where changes occurred)
 - **Parallelized Maven:** no (resource intensive, do NOT parallelize Maven jobs)
 - **Code style restrictions:**
-  - Do NOT use Records or Lombok (unless already present in the file)
+  - Do NOT use Lombok (unless already present in the file)
+  - Records are allowed for internal/non-API classes; do NOT convert existing public API classes to Records
   - Do NOT change public API signatures without justification
   - Do NOT add new dependencies without justification
   - Maintain backwards compatibility for public APIs

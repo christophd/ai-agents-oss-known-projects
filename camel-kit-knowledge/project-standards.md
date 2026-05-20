@@ -10,7 +10,8 @@ This rule file contains build tools, commands, and code style constraints for th
 - **Module-specific build:** yes (run `./mvnw` in the module directory where changes occurred; modules: schema, embedding, indexer, index, mcp)
 - **Parallelized Maven:** no (ONNX model downloads and large index operations are resource intensive)
 - **Code style restrictions:**
-  - Do NOT use Records or Lombok (unless already present in the file)
+  - Do NOT use Lombok (unless already present in the file)
+  - Records are allowed for internal/non-API classes; do NOT convert existing public API classes to Records
   - Do not add new dependencies without justification
   - The `index` module uses CI-Friendly Versions (`${revision}`) — do not hardcode versions in its pom.xml
   - Do not modify the embedding model or vector dimensions without updating all dependent modules (schema, indexer, index, mcp)
